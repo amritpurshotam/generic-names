@@ -3,6 +3,8 @@ channels:
   - defaults
 dependencies:
   - astroid=2.1.0=py37_0
+  - atomicwrites=1.2.1=py37_0
+  - attrs=18.2.0=py37h28b3542_0
   - blas=1.0=mkl
   - ca-certificates=2018.03.07=0
   - certifi=2018.10.15=py37_0
@@ -15,12 +17,16 @@ dependencies:
   - mkl=2018.0.3=1
   - mkl_fft=1.0.6=py37hdbbee80_0
   - mkl_random=1.0.1=py37h77b88f5_1
+  - more-itertools=4.3.0=py37_0
   - numpy=1.15.4=py37ha559c80_0
   - numpy-base=1.15.4=py37h8128ebf_0
   - openssl=1.1.1a=he774522_0
   - pandas=0.23.4=py37h830ac7b_0
   - pip=18.1=py37_0
+  - pluggy=0.8.0=py37_0
+  - py=1.7.0=py37_0
   - pylint=2.2.2=py37_0
+  - pytest=4.0.1=py37_0
   - python=3.7.1=he44a216_5
   - python-dateutil=2.7.5=py37_0
   - pytz=2018.7=py37_0
