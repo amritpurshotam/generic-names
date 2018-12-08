@@ -11,7 +11,7 @@ def test_name_equals_surname():
     df = read_raw_data(raw_data_path)
     assert df.name.equals(df.surname) == True
 
-def test_preprocess():
+def test_correct_columns_are_selected():
     df = DataFrame(columns=['name', 'surname', 'name_generic'])
     df = preprocess(df)
     assert df.columns.tolist() == ['name', 'name_generic']
