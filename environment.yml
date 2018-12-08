@@ -1,0 +1,16 @@
+name: generic-names
+channels:
+  - defaults
+dependencies:
+  - ca-certificates=2018.03.07=0
+  - certifi=2018.10.15=py37_0
+  - openssl=1.1.1a=he774522_0
+  - pip=18.1=py37_0
+  - python=3.7.1=he44a216_5
+  - setuptools=40.6.2=py37_0
+  - vc=14.1=h0510ff6_4
+  - vs2015_runtime=14.15.26706=h3a45250_0
+  - wheel=0.32.3=py37_0
+  - wincertstore=0.2=py37_0
+prefix: C:\Users\amrit.purshotam\AppData\Local\Continuum\anaconda3\envs\generic-names
+
