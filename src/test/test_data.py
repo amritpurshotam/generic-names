@@ -26,3 +26,8 @@ def test_drop_duplicated_rows():
     df = DataFrame(data={'name': ['Amrit', 'Amrit'], 'name_generic': [0, 0]})
     df = drop_duplicated_rows(df)
     assert df.shape == (1, 2)
+
+def test_strip_whitespace():
+    df = DataFrame(data={'name': [' Amrit ']})
+    df = strip_whitespace(df)
+    assert df.iloc[0]['name'] == 'Amrit'

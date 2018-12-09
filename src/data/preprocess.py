@@ -6,6 +6,7 @@ def read_raw_data(file_path: str) -> pd.DataFrame:
 
 def preprocess(df: pd.DataFrame) -> pd.DataFrame:
     df.drop(columns=['surname'], inplace=True)
+    df = strip_whitespace(df)
     df = drop_names_with_different_labels(df)
     df = drop_duplicated_rows(df)
     return df
@@ -21,4 +22,8 @@ def drop_names_with_different_labels(df: pd.DataFrame) -> pd.DataFrame:
 
 def drop_duplicated_rows(df: pd.DataFrame) -> pd.DataFrame:
     df.drop_duplicates(subset=['name', 'name_generic'], inplace=True)
+    return df
+
+def strip_whitespace(df: pd.DataFrame) -> pd.DataFrame:
+    df.name = df.name.str.strip()
     return df
