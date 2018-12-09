@@ -26,6 +26,7 @@ class XgbModel:
         predictions = predictions[:,1:]
         predictions[predictions > 0.2] = 1
         predictions[predictions <= 0.2] = 0
+        predictions = predictions.astype(int)
         return predictions
 
     def load(self, dir: str):
