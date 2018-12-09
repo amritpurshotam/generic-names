@@ -1,4 +1,4 @@
-from preprocess import read_raw_data, preprocess
+from preprocess import read_raw_data, clean
 import pandas as pd
 from collections import Counter
 import matplotlib.pyplot as plt
@@ -16,7 +16,7 @@ def count_characters(df: pd.DataFrame) -> pd.DataFrame:
 
 if __name__ == "__main__":
     df = read_raw_data('data\\raw\\A_training data.csv')
-    df = preprocess(df)
+    df = clean(df)
 
     generic = df[df.name_generic == 1]
     non_generic = df[df.name_generic == 0]

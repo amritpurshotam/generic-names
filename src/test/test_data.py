@@ -1,5 +1,6 @@
 from src.data import *
 from pandas import DataFrame
+from numpy import array
 
 raw_data_path = r'data/raw/A_training data.csv'
 
@@ -13,7 +14,7 @@ def test_name_equals_surname():
 
 def test_correct_columns_are_selected():
     df = DataFrame(columns=['name', 'surname', 'name_generic'])
-    df = preprocess(df)
+    df = clean(df)
     assert df.columns.tolist() == ['name', 'name_generic']
 
 def test_mislabeled_rows_dropped():
@@ -31,3 +32,10 @@ def test_strip_whitespace():
     df = DataFrame(data={'name': [' Amrit ']})
     df = strip_whitespace(df)
     assert df.iloc[0]['name'] == 'Amrit'
+
+def test_vectorize():
+    raw_docs = ['Abé', 'cd']
+    features, vectorizer = vectorize(raw_docs)
+    expected = array([[1, 1, 0, 0, 1], [0, 0, 1, 1, 0]], dtype='int64')
+    assert (features == expected).all() == True
+    assert vectorizer.get_feature_names() == ['A', 'b', 'c', 'd', 'e']
