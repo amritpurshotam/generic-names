@@ -4,8 +4,8 @@ sys.path.append('src')
 from data import read_raw_data, clean, vectorize
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_score
 from visualisation import plot_precision_recall_vs_threshold
+from sklearn.metrics import confusion_matrix
 
 if __name__ == "__main__":
     df = read_raw_data('data\\raw\\A_training data.csv')
@@ -18,7 +18,7 @@ if __name__ == "__main__":
     test_features = vectorizer.transform(test_features)
 
     weight = (train_labels == 0).sum() / (train_labels == 1).sum()
-    clf = XGBClassifier(scale_pos_weight=weight)
+    clf = XGBClassifier(scale_pos_weight=weight, max_depth=9, n_estimators=300, learning_rate=0.35, gamma=0.08, subsample=0.7)
     clf.fit(train_features, train_labels)
 
     predictions = clf.predict_proba(test_features)
