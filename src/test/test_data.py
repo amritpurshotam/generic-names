@@ -21,7 +21,7 @@ def test_mislabeled_rows_dropped():
     df = DataFrame(data={'name': ['Global', 'Global', 'Amrit'], 'name_generic': [0, 1, 0]})
     df = drop_names_with_different_labels(df)
     assert df.iloc[0]['name'] == 'Amrit'
-    assert df.columns.tolist() == ['name', 'name_generic']
+    assert df.shape == (1, 2)
 
 def test_drop_duplicated_rows():
     df = DataFrame(data={'name': ['Amrit', 'Amrit'], 'name_generic': [0, 0]})
