@@ -47,6 +47,9 @@ dependencies:
   - python-dateutil=2.7.5=py37_0
   - pytz=2018.7=py37_0
   - qt=5.9.6=vc14h1e9a669_2
+  - rope=0.11.0=py37_0
+  - scikit-learn=0.20.1=py37hb854c30_0
+  - scipy=1.1.0=py37h4f6bf74_1
   - setuptools=40.6.2=py37_0
   - sip=4.19.8=py37h6538335_0
   - six=1.11.0=py37_1
