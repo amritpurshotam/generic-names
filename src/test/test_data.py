@@ -1,4 +1,4 @@
-from src.data import read_raw_data, preprocess
+from src.data import read_raw_data, preprocess, drop_names_with_different_labels
 from pandas import DataFrame
 
 raw_data_path = r'data/raw/A_training data.csv'
@@ -14,4 +14,10 @@ def test_name_equals_surname():
 def test_correct_columns_are_selected():
     df = DataFrame(columns=['name', 'surname', 'name_generic'])
     df = preprocess(df)
+    assert df.columns.tolist() == ['name', 'name_generic']
+
+def test_mislabeled_rows_dropped():
+    df = DataFrame(data={'name': ['Global', 'Global', 'Amrit'], 'name_generic': [0, 1, 0]})
+    df = drop_names_with_different_labels(df)
+    assert df.iloc[0]['name'] == 'Amrit'
     assert df.columns.tolist() == ['name', 'name_generic']
