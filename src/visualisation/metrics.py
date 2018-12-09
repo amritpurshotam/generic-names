@@ -1,7 +1,8 @@
 from sklearn.metrics import precision_recall_curve
 import matplotlib.pyplot as plt
+from numpy import ndarray
 
-def plot_precision_recall_vs_threshold(labels, predictions):
+def plot_precision_recall_vs_threshold(labels: ndarray, predictions: ndarray) -> None:
     precisions, recalls, thresholds = precision_recall_curve(labels, predictions[:,1:])
 
     plt.figure(figsize=(8, 8))
