@@ -60,5 +60,7 @@ dependencies:
   - wheel=0.32.3=py37_0
   - wincertstore=0.2=py37_0
   - wrapt=1.10.11=py37hfa6e2cd_2
+  - pip:
+    - xgboost==0.81
 prefix: C:\Users\amrit.purshotam\AppData\Local\Continuum\anaconda3\envs\generic-names
 
