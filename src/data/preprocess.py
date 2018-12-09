@@ -7,6 +7,7 @@ def read_raw_data(file_path: str) -> pd.DataFrame:
 def preprocess(df: pd.DataFrame) -> pd.DataFrame:
     df.drop(columns=['surname'], inplace=True)
     df = drop_names_with_different_labels(df)
+    df = drop_duplicated_rows(df)
     return df
 
 def drop_names_with_different_labels(df: pd.DataFrame) -> pd.DataFrame:
@@ -16,4 +17,8 @@ def drop_names_with_different_labels(df: pd.DataFrame) -> pd.DataFrame:
     indexes_to_drop = df[df.name.isin(names)].index.values
     df.drop(labels=indexes_to_drop, inplace=True)
     df.drop(columns=['duplicates_name', 'duplicates_name_and_label'], inplace=True)
+    return df
+
+def drop_duplicated_rows(df: pd.DataFrame) -> pd.DataFrame:
+    df.drop_duplicates(subset=['name', 'name_generic'], inplace=True)
     return df

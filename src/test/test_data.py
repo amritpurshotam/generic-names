@@ -1,4 +1,4 @@
-from src.data import read_raw_data, preprocess, drop_names_with_different_labels
+from src.data import *
 from pandas import DataFrame
 
 raw_data_path = r'data/raw/A_training data.csv'
@@ -21,3 +21,8 @@ def test_mislabeled_rows_dropped():
     df = drop_names_with_different_labels(df)
     assert df.iloc[0]['name'] == 'Amrit'
     assert df.columns.tolist() == ['name', 'name_generic']
+
+def test_drop_duplicated_rows():
+    df = DataFrame(data={'name': ['Amrit', 'Amrit'], 'name_generic': [0, 0]})
+    df = drop_duplicated_rows(df)
+    assert df.shape == (1, 2)
