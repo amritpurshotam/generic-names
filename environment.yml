@@ -1,13 +1,25 @@
 name: generic-names
 channels:
+  - conda-forge
   - defaults
 dependencies:
+  - ca-certificates=2018.11.29=ha4d7672_0
+  - certifi=2018.11.29=py37_1000
+  - freetype=2.9.1=he8b6a0d_1004
+  - jpeg=9c=hfa6e2cd_1001
+  - libpng=1.6.36=h7602738_1000
+  - libtiff=4.0.10=h36446d0_1000
+  - olefile=0.46=py_0
+  - openssl=1.0.2p=hfa6e2cd_1001
+  - pillow=5.3.0=py37h9a613e6_1000
+  - python=3.7.1=hc182675_1000
+  - tk=8.6.9=hfa6e2cd_1000
+  - wordcloud=1.5.0=py37hfa6e2cd_1000
+  - zlib=1.2.11=h2fa13f4_1003
   - astroid=2.1.0=py37_0
   - atomicwrites=1.2.1=py37_0
   - attrs=18.2.0=py37h28b3542_0
   - blas=1.0=mkl
-  - ca-certificates=2018.03.07=0
-  - certifi=2018.10.15=py37_0
   - colorama=0.4.0=py37_0
   - icc_rt=2017.0.4=h97af966_0
   - intel-openmp=2019.1=144
@@ -20,14 +32,12 @@ dependencies:
   - more-itertools=4.3.0=py37_0
   - numpy=1.15.4=py37ha559c80_0
   - numpy-base=1.15.4=py37h8128ebf_0
-  - openssl=1.1.1a=he774522_0
   - pandas=0.23.4=py37h830ac7b_0
   - pip=18.1=py37_0
   - pluggy=0.8.0=py37_0
   - py=1.7.0=py37_0
   - pylint=2.2.2=py37_0
   - pytest=4.0.1=py37_0
-  - python=3.7.1=he44a216_5
   - python-dateutil=2.7.5=py37_0
   - pytz=2018.7=py37_0
   - setuptools=40.6.2=py37_0
