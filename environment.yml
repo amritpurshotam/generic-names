@@ -73,5 +73,3 @@ dependencies:
     - pyqt5==5.11.3
     - pyqt5-sip==4.19.13
     - xgboost==0.81
-prefix: C:\Users\amrit.purshotam\AppData\Local\Continuum\anaconda3\envs\generic-names
-
