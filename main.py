@@ -1,6 +1,4 @@
 import os
-import sys
-sys.path.append('src')
 from src.modelling import XgbModel
 from pandas import DataFrame
 import pandas as pd

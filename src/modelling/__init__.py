@@ -1,1 +1,1 @@
-from modelling.XgbModel import XgbModel
+from .XgbModel import XgbModel

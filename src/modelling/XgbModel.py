@@ -1,6 +1,4 @@
-import sys
-sys.path.append('src')
-from data import clean, vectorize
+from src.data import clean, vectorize
 from xgboost import XGBClassifier
 from sklearn.feature_extraction.text import CountVectorizer
 from pandas import DataFrame
